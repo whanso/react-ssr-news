@@ -11,7 +11,7 @@ const Header = () => {
   const toggleMenu = () => setMenuToggle(!menuOpen);
 
   const stylesOpen = {
-    transform: 'translateX(0px)'
+    transform: 'translateX(0px)',
   };
   return (
     <div className="navbar-fixed">

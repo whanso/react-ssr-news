@@ -16,7 +16,8 @@
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
   },
   "author": "ilker ALTIN",
   "license": "ISC",

@@ -8,11 +8,11 @@ import PropTypes from 'prop-types'; // ES6
 import { fetchArticles } from '../actions';
 import ArticleDetailModal from '../components/ArticleDetailModal';
 
-const HomePage = props => {
+const HomePage = (props) => {
   const [modal, setModal] = useState(false);
   const [currentArticle, setCurrentArticle] = useState({});
 
-  const readArticle = article => {
+  const readArticle = (article) => {
     setCurrentArticle(article);
     setModal(true);
   };
@@ -22,7 +22,7 @@ const HomePage = props => {
   };
 
   const renderArticles = () => {
-    return props.articles.map(article => (
+    return props.articles.map((article) => (
       <div className="col s12 m6 l6 xl4" key={article.title}>
         <div className="card large">
           <div className="card-image">
@@ -79,13 +79,13 @@ const HomePage = props => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    articles: state.articles
+    articles: state.articles,
   };
 };
 
-const loadData = store => {
+const loadData = (store) => {
   // For the connect tag we need Provider component but on the server at this moment app is not rendered yet
   // So we need to use store itself to load data
   return store.dispatch(fetchArticles()); // Manually dispatch a network request
@@ -93,18 +93,15 @@ const loadData = store => {
 
 HomePage.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.any),
-  fetchArticles: PropTypes.func
+  fetchArticles: PropTypes.func,
 };
 
 HomePage.defaultProps = {
   articles: [],
-  fetchArticles: null
+  fetchArticles: null,
 };
 
 export default {
-  component: connect(
-    mapStateToProps,
-    { fetchArticles }
-  )(HomePage),
-  loadData
+  component: connect(mapStateToProps, { fetchArticles })(HomePage),
+  loadData,
 };

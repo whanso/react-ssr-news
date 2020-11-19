@@ -16,7 +16,7 @@ const config = {
     chunks: true,
     chunkModules: true,
     modules: true,
-    children: true
+    children: true,
   },
   optimization: {
     minimizer: [
@@ -27,11 +27,11 @@ const config = {
         uglifyOptions: {
           compress: false,
           ecma: 6,
-          mangle: true
+          mangle: true,
         },
-        sourceMap: false
-      })
-    ]
+        sourceMap: false,
+      }),
+    ],
   },
   // Tell webpack to root file of our server app
   entry: './src/client/client.js',
@@ -39,7 +39,7 @@ const config = {
   // Tell webpack where to put output file
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public'),
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -47,10 +47,10 @@ const config = {
     new CompressionPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    })
-  ]
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+  ],
 };
 
 module.exports = merge(baseConfig, config);

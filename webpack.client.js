@@ -10,9 +10,9 @@ const config = {
   // Tell webpack where to put output file
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public'),
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
 };
 
 module.exports = merge(baseConfig, config);

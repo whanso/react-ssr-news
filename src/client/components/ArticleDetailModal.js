@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ArticleDetailModal = props => {
+const ArticleDetailModal = (props) => {
   const { handler, data } = props;
   return (
     <>
@@ -15,7 +15,7 @@ const ArticleDetailModal = props => {
           top: 10,
           width: '95vw',
           height: '95vh',
-          maxHeight: '95vh'
+          maxHeight: '95vh',
         }}
       >
         <div className="modal-footer">
@@ -57,12 +57,12 @@ const ArticleDetailModal = props => {
 
 ArticleDetailModal.propTypes = {
   data: PropTypes.objectOf(PropTypes.any),
-  handler: PropTypes.func
+  handler: PropTypes.func,
 };
 
 ArticleDetailModal.defaultProps = {
   data: null,
-  handler: null
+  handler: null,
 };
 
 export default ArticleDetailModal;
